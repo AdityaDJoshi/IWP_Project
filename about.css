@@ -1,0 +1,128 @@
+body {
+    background-color: black;
+}
+
+.main {
+    color: #fff;
+}
+
+.main-content {
+    padding-left: 2%;
+    font-family: 'Cambria', 'Cochin', 'Georgia', 'Times', 'Times New Roman', 'serif';
+    font-size: 18px;
+}
+
+.a {
+    position: relative;
+    left: 15rem;
+    padding-bottom: 100rem;
+}
+
+.b {
+    position: relative;
+    left: 30rem;
+    padding-bottom: 100rem;
+}
+
+.c {
+    position: relative;
+    left: 45rem;
+    padding-bottom: 100rem;
+}
+
+/* Testimony slider */
+
+.testimonial-area {
+    padding-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+    -webkit-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.testimonial-area:before {
+    position: absolute;
+    content: '';
+    background: rgba(0, 0, 0, 0.9);
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.single-testimonial {
+    color: #fff;
+    padding-left: 75px;
+    position: relative;
+    margin: 0 15px 15px;
+}
+
+.img-area {
+    border-radius: 50%;
+    height: 150px;
+    left: 0;
+    margin-top: -75px;
+    position: absolute;
+    top: 50%;
+    width: 150px;
+}
+
+.img-area>img {
+    background: linear-gradient(to bottom, darkcyan, white);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.testi-text {
+    background: #ffff4a;
+    padding: 40px 20px 40px 100px;
+    color: black;
+}
+
+.testi-text h4 {
+    font-size: 30px;
+    font-family: Shrikhand;
+}
+
+.testi-text h4 span {
+    display: block;
+    font-size: 14px;
+    padding-left: 10%;
+}
+
+.testi-text p {
+    font-family: Courgette;
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.single-testimonial:hover .testi-text {
+    background: #fff;
+    transition: 0.9s;
+}
+
+.testimonial-area div.owl-nav {
+    color: #ffff4a;
+    display: inline-block;
+    font-size: 55px;
+    height: 60px;
+    margin-top: -30px;
+    text-align: center;
+    width: 40px;
+    transition: 0.3s;
+}
+
+.owl-prev {
+    position: absolute;
+    left: -20px;
+    top: 100px;
+}
+
+.owl-next {
+    position: absolute;
+    right: -20px;
+    top: 100px;
+}
+
+/* Testimony slider ends */

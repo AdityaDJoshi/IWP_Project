@@ -1,0 +1,16 @@
+body{
+  background-color: black;
+}
+h1{
+  padding-top: 1.3rem;
+  text-align: center;
+  color: white;
+}
+h5
+{
+  color: white;
+  text-align: center;
+}
+.cell{
+  padding: 1.7rem;
+}
