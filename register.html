@@ -103,7 +103,7 @@ body {
 </head>
 <body>
 <div class="signup-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+    <form action="registerSuccess.php" method="post">
 		<h2>Register</h2>
 		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
         <div class="form-group">
@@ -125,7 +125,7 @@ body {
 			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
 		</div>
 		<div class="form-group">
-            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+            <button name="set" type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
         </div>
     </form>
 	<div class="text-center">Already have an account? <a href="login.html">Sign in</a></div>

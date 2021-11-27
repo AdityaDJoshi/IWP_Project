@@ -2,7 +2,7 @@ body {
     color: #000;
     overflow-x: hidden;
     height: 100%;
-    background-image: linear-gradient(to right, #D500F9, #FFD54F);
+    background-image: linear-gradient(to right, #000, #FFF);
     background-repeat: no-repeat
 }
 
@@ -49,7 +49,7 @@ button:focus {
 
 .card2 {
     width: 50%;
-    background-image: linear-gradient(to right, #FFD54F, #D500F9)
+    background-image: linear-gradient(to right,#000, #FFF)
 }
 
 #logo {
