@@ -43,7 +43,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="AfterLoggeinHome.php">Home</a>
+              <a class="nav-link" href="AfterLoggeinHome.php">Home</a>
           </li>
           <li class="nav-item">
               <a class="nav-link active" href="AfterAbutus.php">About us</a>
@@ -58,7 +58,7 @@
             <a class="nav-link" href="AfterRooms.php">Rooms & Pricing</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="AfterRestnt.php">Restaurant</a>
+            <a class="nav-link active" aria-current="page" href="AfterRestnt.php">Restaurant</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" style="background-color: white; margin-left:15px; color: black;"><img style="background-color: white;" src="https://img.icons8.com/ios/40/000000/user--v3.png"/><?php echo $_SESSION['userName']; ?></a>
@@ -205,6 +205,7 @@
           <div class="col-lg-6 menu-item filter-specialty">
             <div class="menu-content">
               <a href="#">Tuscan Grilled</a><span>$9.95</span>
+              <input type="number" name="food2" value="">
             </div>
             <div class="menu-ingredients">
               Grilled chicken with provolone, artichoke hearts, and roasted red pesto

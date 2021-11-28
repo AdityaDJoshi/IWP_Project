@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="AfterLoggeinHome.php">Home</a>
+              <a class="nav-link"  href="AfterLoggeinHome.php">Home</a>
           </li>
           <li class="nav-item">
               <a class="nav-link active" href="AfterAbutus.php">About us</a>
@@ -37,7 +37,7 @@
             <a class="nav-link" href="features.html">Invoice</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="AfterRooms.php">Rooms & Pricing</a>
+            <a class="nav-link" aria-current="page" href="AfterRooms.php">Rooms & Pricing</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="AfterRestnt.php">Restaurant</a>
@@ -65,7 +65,9 @@
             <h5 class="card-title">Platinum Suite</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-            <button type="button" class="btn btn-outline-success">Book Now!</button>
+              <form class="" action="roomReg.php" method="post">
+                <button type="submit" class="btn btn-outline-success">Book Now!</button>
+              </form>
           </div>
         </div>
       </td>
@@ -78,48 +80,9 @@
             <h5 class="card-title">Villa</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-            <button type="button" class="btn btn-outline-success">Book Now!</button>
-          </div>
-        </div>
-      </td>
-      <td class="cell">
-        <div class="card" style="width: 18rem;">
-          <img src="https://i.pinimg.com/originals/d7/1f/79/d71f79e1e76221f35f5911488aeb8f0c.jpg" class="card-img-top"
-            alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Golden Suite</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <button type="button" class="btn btn-outline-success">Book Now!</button>
-          </div>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td class="cell">
-
-        <div class="card" style="width: 18rem;">
-          <img
-            src="https://a36c2e13a78ae1256a2f-1dc878dead8ec78a84e429cdf4c9df00.ssl.cf1.rackcdn.com/responsive/980/a36c2e13a78ae1256a2f-1dc878dead8ec78a84e429cdf4c9df00.ssl.cf1.rackcdn.com/u/park-hotel-hong-kong/room/Superior-Single-Room_mid.jpg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Single Bedroom</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <button type="button" class="btn btn-outline-success">Book Now!</button>
-          </div>
-        </div>
-      </td>
-      <td class="cell">
-        <div class="card" style="width: 18rem;">
-          <img
-            src="https://www.seleqtionshotels.com/content/dam/seleqtions/Connaugth/TCPD_PremiumBedroom4_1235.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg"
-            class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Double Bedroom</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <button type="button" class="btn btn-outline-success">Book Now!</button>
+              <form class="" action="roomReg.php" method="post">
+                <button type="submit" class="btn btn-outline-success">Book Now!</button>
+              </form>
           </div>
         </div>
       </td>
@@ -131,11 +94,14 @@
             <h5 class="card-title">Family Bedroom</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
               content.</p>
-            <button type="button" class="btn btn-outline-success">Book Now!</button>
+              <form class="" action="roomReg.php" method="post">
+                <button type="submit" class="btn btn-outline-success">Book Now!</button>
+              </form>
           </div>
         </div>
       </td>
     </tr>
+
   </table>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"

@@ -27,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="AfterLoggeinHome.php">Home</a>
+                        <a class="nav-link" href="AfterLoggeinHome.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="AfterAbutus.php">About us</a>
+                        <a class="nav-link active" aria-current="page" href="AfterAbutus.php">About us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="touristspots.html">Tourist spots</a>
