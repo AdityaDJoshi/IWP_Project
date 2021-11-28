@@ -18,13 +18,14 @@ if(isset($_POST['bt1'])){
   }
   echo "Connected successfully <br/>";
 
-  $sqlr = "SELECT passwd FROM users where email = '$em';";
+  $sqlr = "SELECT * FROM users where email = '$em';";
   $result = $conn->query($sqlr);
 
   while($row = $result->fetch_assoc()) {
     if($row['passwd'] === $pswd){
-      header('Location: AfterLoggeinHome.html');
-      echo "VERIFIED";
+      session_start();
+      $_SESSION["userName"] = $row['uname'];
+      header('Location: AfterLoggeinHome.php');
     }
     else{
       echo "PASSWORD IS INCORRECT! <a href=" . "login.html" .">Try Again?</a>";
