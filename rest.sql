@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 29, 2021 at 11:05 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.30
+-- Host: localhost:8889
+-- Generation Time: Nov 29, 2021 at 07:43 PM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,17 +32,16 @@ CREATE TABLE `rest` (
   `bill` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `users`
+-- Dumping data for table `rest`
 --
 
-CREATE TABLE `users` (
-  `uname` varchar(30) DEFAULT NULL,
-  `passwd` varchar(15) DEFAULT NULL,
-  `email` varchar(30) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `rest` (`uname`, `bill`) VALUES
+('', 38.85),
+('', 38.85),
+('JoshiAditya', 11.9),
+('JoshiAditya', 11.9),
+('', 38.85);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
