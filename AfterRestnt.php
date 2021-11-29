@@ -205,7 +205,6 @@
           <div class="col-lg-6 menu-item filter-specialty">
             <div class="menu-content">
               <a href="#">Tuscan Grilled</a><span>$9.95</span>
-              <input type="number" name="food2" value="">
             </div>
             <div class="menu-ingredients">
               Grilled chicken with provolone, artichoke hearts, and roasted red pesto
@@ -249,7 +248,11 @@
           </div>
 
         </div>
+        <a href="Menu.php">
 
+          <input type="button" id="buynow" value="Buy now"
+            style="text-align: center;border-radius: 50px;color: #fff;background: #ffb03b; margin: 0 auto 0 50%;">
+        </a>
       </div>
     </section><!-- End Menu Section -->
 

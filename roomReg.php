@@ -15,8 +15,8 @@
 body {
 	color: #fff;
   background-image: url("iwproom.jpg");
-  height: 100%;
   background-size: cover;
+  height: 100%;
 	font-family: 'Roboto', sans-serif;
 }
 
