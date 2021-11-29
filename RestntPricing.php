@@ -38,6 +38,7 @@
       header('Location: AfterRestnt.php');
     }
     $inv = rand(12345, 19999);
+    file_put_contents('secret.txt', $inv);
   }
 
 
@@ -47,6 +48,9 @@
   <title></title>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+  </script>
   <style media="screen">
     /* -------------------------------------
   GLOBAL
@@ -419,12 +423,16 @@
                         </tr>
                         <tr>
                           <td class="content-block">
-                            <a href="#" id="cmd">Download Bill</a><br>
+                            <a onclick="doCapture()" href="#" id="cmd">Download Bill</a><br>
 
-                            <div id="editor"></div>
-                            <!-- <button id="cmd">generate PDF</button><br> -->
                             <a href="AfterRestnt.php">Order Some more</a><br>
                             <a href="AfterLoggeinHome.php">Go back</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="content-block">
+
+                            <div id="output"></div>
                           </td>
                         </tr>
                         <tr>
@@ -457,19 +465,23 @@
 
 </html>
 <script>
-  var doc = new jsPDF();
-  var specialElementHandlers = {
-    '#editor': function(element, renderer) {
-      return true;
-    }
-  };
+  function doCapture() {
+    html2canvas(document.getElementById("bill")).then(function(canvas) {
 
-  $('#cmd').click(function() {
+      var ajax = new XMLHttpRequest();
 
-    doc.fromHTML($('#bill').html(), 15, 15, {
-      'width': 170,
-      'elementHandlers': specialElementHandlers
+      ajax.open("POST", "receive.php", true);
+
+      ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      ajax.send("image=" + canvas.toDataURL("image/jpeg", 0.9));
+      ajax.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+          console.log(this.responseText);
+        }
+      };
     });
-    doc.save('sample-file.pdf');
-  });
+  }
 </script>
