@@ -108,7 +108,7 @@ body {
 <body>
 
 <div class="signup-form">
-    <form action="" method="post">
+    <form action="roomFinal.php" method="post">
 		<h2>ROOM BOOKING</h2>
 		<p class="hint-text">Book your room now <?php echo $_SESSION['userName']; ?>! Only takes a minute.</p>
         <div class="form-group">
@@ -126,7 +126,14 @@ body {
 		<div class="form-group">
             <input type="date" class="form-control" name="toDate" placeholder="to mm/dd/yyyy" required="required">
         </div>
-        <div class="form-group">
+    <div class="form-group">
+                <select class="form-control" name="roomType">
+                    <option value="Deluxe">Deluxe</option>
+                    <option value="Suite">Suite</option>
+                    <option value="Family Suite">Family Suite</option>
+                </select>
+        </div>
+    <div class="form-group">
 			<label class="form-check-label"><input type="checkbox" required="required"> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
 		</div>
 		<div class="form-group">

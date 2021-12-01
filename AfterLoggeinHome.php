@@ -5,27 +5,24 @@
   <?php session_start() ?>
   <meta charset="utf-8">
   <title>Home page</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style1.css">
-  <script>
-    function fun() {
-      document.getElementById("signout").submit();
-    }
-  </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="hotelhome.html">
-        <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/unicorn-icon.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+      <a class="navbar-brand" href="AfterLoggeinHome.php">
+        <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/unicorn-icon.jpg" width="30" height="30"
+          class="d-inline-block align-top" alt="">
         Unicorn Hotels</a>
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="nav-ul">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="hotelhome.html">Home</a>
           </li>
@@ -33,10 +30,10 @@
             <a class="nav-link " href="AfterAbutus.php">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="touristspots.html">Tourist spots</a>
+            <a class="nav-link" href="tourism.php">Tourist spots</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="features.html">Invoice</a>
+            <a class="nav-link" href="invoice.php">Invoice</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="AfterRooms.php">Rooms & Pricing</a>
@@ -44,17 +41,8 @@
           <li class="nav-item">
             <a class="nav-link active" href="AfterRestnt.php">Restaurant</a>
           </li>
-          <li class="nav-item" id="nav-li">
-            <a id="nav-a" class="nav-link" href="#" style="background-color: white; margin-left:15px; color: black;"><img style="background-color: white;" src="https://img.icons8.com/ios/40/000000/user--v3.png" /><?php echo $_SESSION['userName']; ?></a>
-            <ul id="nav-ul" class="dropdown">
-
-              <li id="nav-li">
-                <form id="signout" action="logout.php" method="post">
-                  <a id="nav-a" href="#" onclick="fun()">Logout</a>
-                </form>
-              </li>
-              <li id="nav-li"><a id="nav-a" href="#">Update</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="background-color: white; margin-left:15px; color: black;"><img style="background-color: white;" src="https://img.icons8.com/ios/40/000000/user--v3.png"/><?php echo $_SESSION['userName']; ?></a>
           </li>
         </ul>
       </div>
@@ -65,7 +53,9 @@
     <table>
       <tr class="r1">
         <td class="cell1">
-          <img style="display:block;" width="100%" height="100%" src="https://media.istockphoto.com/photos/hotel-room-suite-with-view-picture-id627892060?k=20&m=627892060&s=612x612&w=0&h=k6QY-qWNlFbvYhas82e_MoSXceozjrhhgp-krujsoDw=" alt="">
+          <img style="display:block;" width="100%" height="100%"
+            src="https://media.istockphoto.com/photos/hotel-room-suite-with-view-picture-id627892060?k=20&m=627892060&s=612x612&w=0&h=k6QY-qWNlFbvYhas82e_MoSXceozjrhhgp-krujsoDw="
+            alt="">
         </td>
         <td class="cell2">
           <h1 class="r1h">Welcome to the Unicorn Hotels</h1>
@@ -90,24 +80,30 @@
             bedding.</h4>
         </td>
         <td class="cell2">
-          <img style="display:block;" width="100%" height="100%" src="https://hotellimamarbella.com/wp-content/uploads/2016/12/amenities-hotel-lima.jpg" alt="">
+          <img style="display:block;" width="100%" height="100%"
+            src="https://hotellimamarbella.com/wp-content/uploads/2016/12/amenities-hotel-lima.jpg" alt="">
         </td>
       </tr>
     </table>
   </div>
 
   <div class="log">
-    <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/unicorn-icon.jpg" width="170" height="170" style="padding:2rem;" />
+    <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/unicorn-icon.jpg" width="170" height="170"
+      style="padding:2rem;" />
     <h1>Already a Registered member of our hotel? Sign in to make another Booking!!!</h1>
     <h3>New User? You are most welcome to Register as a customer and enjoy our Lavish services!!!</h3>
-
-
     <div class="" style="padding-bottom:1.5rem;padding-top:1.5rem;">
+
+      <form class="" action="logout.php" method="post">
+        <button type="submit" class="btn btn-outline-success" >Logout</button>
+      </form>
 
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>

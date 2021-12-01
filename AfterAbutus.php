@@ -16,7 +16,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="hotelhome.html">
+            <a class="navbar-brand" href="AfterLoggeinHome.php">
                 <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/unicorn-icon.jpg" width="30"
                     height="30" class="d-inline-block align-top" alt="">
                 Unicorn Hotels</a>
@@ -33,10 +33,10 @@
                         <a class="nav-link active" aria-current="page" href="AfterAbutus.php">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="touristspots.html">Tourist spots</a>
+                        <a class="nav-link" href="tourism.php">Tourist spots</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="features.html">Invoice</a>
+                        <a class="nav-link" href="invoice.php">Invoice</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="AfterRooms.php">Rooms & Pricing</a>
