@@ -1,378 +1,448 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
 
-    <?php
-    session_start();
-    $servername = "localhost";
-    $username = "root";
-    $password = "password";
-    $dbname = "iwp";
+<head>
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+  <?php
+  session_start();
+  $servername = "localhost";
+  $username = "root";
+  $password = "password";
+  $dbname = "iwp";
 
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
-    $nnam = $_SESSION["userName"];
-    $sqlr = "SELECT bill,price,Tprice FROM rest,rooms,tour where rooms.usname = '$nnam' and rest.uname = '$nnam' and tour.uname = '$nnam';";
-    $result = $conn->query($sqlr);
-    $grandTotal = 0;
-    $rest = 0;
-    $room = 0;
-    $tour = 0;
-    while($row = $result->fetch_assoc()) {
-      $room = $row['price'];
-      $rest = $row['bill'];
-      $tour = $row['Tprice'];
-      $grandTotal = $row['bill'] + $row['price'] + $row['Tprice'];
-    }
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
-     ?>
+  $nnam = $_SESSION["userName"];
+  $sqlr = "SELECT bill,price,Tprice FROM rest,rooms,tour where rooms.usname = '$nnam' and rest.uname = '$nnam' and tour.uname = '$nnam';";
+  $result = $conn->query($sqlr);
+  $grandTotal = 0;
+  $rest = 0;
+  $room = 0;
+  $tour = 0;
+  while ($row = $result->fetch_assoc()) {
+    $room = $row['price'];
+    $rest = $row['bill'];
+    $tour = $row['Tprice'];
+    $grandTotal = $row['bill'] + $row['price'] + $row['Tprice'];
+  }
+  $inv
+    = session_id();
+  file_put_contents('secret.txt', $inv);
 
-    <meta charset="utf-8">
-    <title></title>
-    <style media="screen">
+  ?>
+
+  <meta charset="utf-8">
+  <title></title>
+  <style media="screen">
     /* -------------------------------------
   GLOBAL
   A very basic CSS reset
 ------------------------------------- */
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  box-sizing: border-box;
-  font-size: 14px;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
 
-img {
-  max-width: 100%;
-}
+    img {
+      max-width: 100%;
+    }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: none;
-  width: 100% !important;
-  height: 100%;
-  line-height: 1.6;
-}
+    body {
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: none;
+      width: 100% !important;
+      height: 100%;
+      line-height: 1.6;
+    }
 
-/* Let's make sure all tables have defaults */
-table td {
-  vertical-align: top;
-}
+    /* Let's make sure all tables have defaults */
+    table td {
+      vertical-align: top;
+    }
 
-/* -------------------------------------
+    /* -------------------------------------
   BODY & CONTAINER
 ------------------------------------- */
-body {
-  background-color: #f6f6f6;
-}
+    body {
+      background-color: #f6f6f6;
+    }
 
-.body-wrap {
-  background-color: #f6f6f6;
-  width: 100%;
-}
+    .body-wrap {
+      background-color: #f6f6f6;
+      width: 100%;
+    }
 
-.container {
-  display: block !important;
-  max-width: 600px !important;
-  margin: 0 auto !important;
-  /* makes it centered */
-  clear: both !important;
-}
+    .container {
+      display: block !important;
+      max-width: 600px !important;
+      margin: 0 auto !important;
+      /* makes it centered */
+      clear: both !important;
+    }
 
-.content {
-  max-width: 600px;
-  margin: 0 auto;
-  display: block;
-  padding: 20px;
-}
+    .content {
+      max-width: 600px;
+      margin: 0 auto;
+      display: block;
+      padding: 20px;
+    }
 
-/* -------------------------------------
+    /* -------------------------------------
   HEADER, FOOTER, MAIN
 ------------------------------------- */
-.main {
-  background: #fff;
-  border: 1px solid #e9e9e9;
-  border-radius: 3px;
-}
+    .main {
+      background: #fff;
+      border: 1px solid #e9e9e9;
+      border-radius: 3px;
+    }
 
-.content-wrap {
-  padding: 20px;
-}
+    .content-wrap {
+      padding: 20px;
+    }
 
-.content-block {
-  padding: 0 0 20px;
-}
+    .content-block {
+      padding: 0 0 20px;
+    }
 
-.header {
-  width: 100%;
-  margin-bottom: 20px;
-}
+    .header {
+      width: 100%;
+      margin-bottom: 20px;
+    }
 
-.footer {
-  width: 100%;
-  clear: both;
-  color: #999;
-  padding: 20px;
-}
-.footer a {
-  color: #999;
-}
-.footer p, .footer a, .footer unsubscribe, .footer td {
-  font-size: 12px;
-}
+    .footer {
+      width: 100%;
+      clear: both;
+      color: #999;
+      padding: 20px;
+    }
 
-/* -------------------------------------
+    .footer a {
+      color: #999;
+    }
+
+    .footer p,
+    .footer a,
+    .footer unsubscribe,
+    .footer td {
+      font-size: 12px;
+    }
+
+    /* -------------------------------------
   TYPOGRAPHY
 ------------------------------------- */
-h1, h2, h3 {
-  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: #000;
-  margin: 40px 0 0;
-  line-height: 1.2;
-  font-weight: 400;
-}
+    h1,
+    h2,
+    h3 {
+      font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      color: #000;
+      margin: 40px 0 0;
+      line-height: 1.2;
+      font-weight: 400;
+    }
 
-h1 {
-  font-size: 32px;
-  font-weight: 500;
-}
+    h1 {
+      font-size: 32px;
+      font-weight: 500;
+    }
 
-h2 {
-  font-size: 24px;
-}
+    h2 {
+      font-size: 24px;
+    }
 
-h3 {
-  font-size: 18px;
-}
+    h3 {
+      font-size: 18px;
+    }
 
-h4 {
-  font-size: 14px;
-  font-weight: 600;
-}
+    h4 {
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-p, ul, ol {
-  margin-bottom: 10px;
-  font-weight: normal;
-}
-p li, ul li, ol li {
-  margin-left: 5px;
-  list-style-position: inside;
-}
+    p,
+    ul,
+    ol {
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
 
-/* -------------------------------------
+    p li,
+    ul li,
+    ol li {
+      margin-left: 5px;
+      list-style-position: inside;
+    }
+
+    /* -------------------------------------
   LINKS & BUTTONS
 ------------------------------------- */
-a {
-  color: #1ab394;
-  text-decoration: underline;
-}
+    a {
+      color: #1ab394;
+      text-decoration: underline;
+    }
 
-.btn-primary {
-  text-decoration: none;
-  color: #FFF;
-  background-color: #1ab394;
-  border: solid #1ab394;
-  border-width: 5px 10px;
-  line-height: 2;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-  display: inline-block;
-  border-radius: 5px;
-  text-transform: capitalize;
-}
+    .btn-primary {
+      text-decoration: none;
+      color: #FFF;
+      background-color: #1ab394;
+      border: solid #1ab394;
+      border-width: 5px 10px;
+      line-height: 2;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      border-radius: 5px;
+      text-transform: capitalize;
+    }
 
-/* -------------------------------------
+    /* -------------------------------------
   OTHER STYLES THAT MIGHT BE USEFUL
 ------------------------------------- */
-.last {
-  margin-bottom: 0;
-}
+    .last {
+      margin-bottom: 0;
+    }
 
-.first {
-  margin-top: 0;
-}
+    .first {
+      margin-top: 0;
+    }
 
-.aligncenter {
-  text-align: center;
-}
+    .aligncenter {
+      text-align: center;
+    }
 
-.alignright {
-  text-align: right;
-}
+    .alignright {
+      text-align: right;
+    }
 
-.alignleft {
-  text-align: left;
-}
+    .alignleft {
+      text-align: left;
+    }
 
-.clear {
-  clear: both;
-}
+    .clear {
+      clear: both;
+    }
 
-/* -------------------------------------
+    /* -------------------------------------
   ALERTS
   Change the class depending on warning email, good email or bad email
 ------------------------------------- */
-.alert {
-  font-size: 16px;
-  color: #fff;
-  font-weight: 500;
-  padding: 20px;
-  text-align: center;
-  border-radius: 3px 3px 0 0;
-}
-.alert a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-}
-.alert.alert-warning {
-  background: #f8ac59;
-}
-.alert.alert-bad {
-  background: #ed5565;
-}
-.alert.alert-good {
-  background: #1ab394;
-}
+    .alert {
+      font-size: 16px;
+      color: #fff;
+      font-weight: 500;
+      padding: 20px;
+      text-align: center;
+      border-radius: 3px 3px 0 0;
+    }
 
-/* -------------------------------------
+    .alert a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .alert.alert-warning {
+      background: #f8ac59;
+    }
+
+    .alert.alert-bad {
+      background: #ed5565;
+    }
+
+    .alert.alert-good {
+      background: #1ab394;
+    }
+
+    /* -------------------------------------
   INVOICE
   Styles for the billing table
 ------------------------------------- */
-.invoice {
-  margin: 40px auto;
-  text-align: left;
-  width: 80%;
-}
-.invoice td {
-  padding: 5px 0;
-}
-.invoice .invoice-items {
-  width: 100%;
-}
-.invoice .invoice-items td {
-  border-top: #eee 1px solid;
-}
-.invoice .invoice-items .total td {
-  border-top: 2px solid #333;
-  border-bottom: 2px solid #333;
-  font-weight: 700;
-}
+    .invoice {
+      margin: 40px auto;
+      text-align: left;
+      width: 80%;
+    }
 
-/* -------------------------------------
+    .invoice td {
+      padding: 5px 0;
+    }
+
+    .invoice .invoice-items {
+      width: 100%;
+    }
+
+    .invoice .invoice-items td {
+      border-top: #eee 1px solid;
+    }
+
+    .invoice .invoice-items .total td {
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #333;
+      font-weight: 700;
+    }
+
+    /* -------------------------------------
   RESPONSIVE AND MOBILE FRIENDLY STYLES
 ------------------------------------- */
-@media only screen and (max-width: 640px) {
-  h1, h2, h3, h4 {
-      font-weight: 600 !important;
-      margin: 20px 0 5px !important;
-  }
+    @media only screen and (max-width: 640px) {
 
-  h1 {
-      font-size: 22px !important;
-  }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600 !important;
+        margin: 20px 0 5px !important;
+      }
 
-  h2 {
-      font-size: 18px !important;
-  }
+      h1 {
+        font-size: 22px !important;
+      }
 
-  h3 {
-      font-size: 16px !important;
-  }
+      h2 {
+        font-size: 18px !important;
+      }
 
-  .container {
-      width: 100% !important;
-  }
+      h3 {
+        font-size: 16px !important;
+      }
 
-  .content, .content-wrap {
-      padding: 10px !important;
-  }
+      .container {
+        width: 100% !important;
+      }
 
-  .invoice {
-      width: 100% !important;
-  }
-}
-    </style>
-  </head>
-  <body>
-    <table class="body-wrap">
-    <tbody><tr>
+      .content,
+      .content-wrap {
+        padding: 10px !important;
+      }
+
+      .invoice {
+        width: 100% !important;
+      }
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+  </script>
+</head>
+
+<body>
+  <table class="body-wrap">
+    <tbody>
+      <tr>
         <td></td>
         <td class="container" width="600">
-            <div class="content">
-                <table class="main" width="100%" cellpadding="0" cellspacing="0">
-                    <tbody><tr>
-                        <td class="content-wrap aligncenter">
-                            <table width="100%" cellpadding="0" cellspacing="0">
-                                <tbody><tr>
-                                    <td class="content-block">
-                                        <h2>Thanks for Ordering</h2>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="content-block">
-                                        <table class="invoice">
-                                            <tbody><tr>
-                                                <td><?php echo $_SESSION['userName'] ?><br>Invoice #<?php echo session_id(); ?></td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <table class="invoice-items" cellpadding="0" cellspacing="0">
-                                                        <tbody><tr>
-                                                            <td>Restaurant Bill</td>
-                                                            <td class="alignright">$ <?php echo $rest; ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Room Bill</td>
-                                                            <td class="alignright">$ <?php echo $room; ?></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>Tourism Bill</td>
-                                                            <td class="alignright">$ <?php echo $tour; ?></td>
-                                                        </tr>
-                                                        <tr class="total">
-                                                            <td class="alignright" width="80%"> Grand Total</td>
-                                                            <td class="alignright">$ <?php echo $grandTotal; ?></td>
-                                                        </tr>
-                                                    </tbody></table>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="content-block">
-                                        <a href="restBillpdf.php">DOWNLOAD BILL</a><br>
-                                        <a href="AfterLoggeinHome.php">Go back</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="content-block">
-                                        Unicorn Hotels Inc. 147 Van Ness, San Francisco 94102
-                                    </td>
-                                </tr>
-                            </tbody></table>
-                        </td>
-                    </tr>
-                </tbody></table>
-                <div class="footer">
-                    <table width="100%">
-                        <tbody><tr>
-                            <td class="aligncenter content-block">Questions? Email <a href="mailto:">support@unicornHotels.inc</a></td>
+          <div class="content" id="bill">
+            <table class="main" width="100%" cellpadding="0" cellspacing="0">
+              <tbody>
+                <tr>
+                  <td class="content-wrap aligncenter">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                      <tbody>
+                        <tr>
+                          <td class="content-block">
+                            <h2>Thanks for Ordering</h2>
+                          </td>
                         </tr>
-                    </tbody></table>
-                </div></div>
+                        <tr>
+                          <td class="content-block">
+                            <table class="invoice">
+                              <tbody>
+                                <tr>
+                                  <td><?php echo $_SESSION['userName'] ?><br>Invoice #<?php echo session_id(); ?></td>
+                                </tr>
+                                <tr>
+                                  <td>
+                                    <table class="invoice-items" cellpadding="0" cellspacing="0">
+                                      <tbody>
+                                        <tr>
+                                          <td>Restaurant Bill</td>
+                                          <td class="alignright">$ <?php echo $rest; ?></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Room Bill</td>
+                                          <td class="alignright">$ <?php echo $room; ?></td>
+                                        </tr>
+                                        <tr>
+                                          <td>Tourism Bill</td>
+                                          <td class="alignright">$ <?php echo $tour; ?></td>
+                                        </tr>
+                                        <tr class="total">
+                                          <td class="alignright" width="80%"> Grand Total</td>
+                                          <td class="alignright">$ <?php echo $grandTotal; ?></td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="content-block">
+                            <a onclick="doCapture()" href="#" id="cmd">Download Bill</a><br>
+
+                            <!-- <a href="restBillpdf.php">DOWNLOAD BILL</a><br> -->
+                            <a href="AfterLoggeinHome.php">Go back</a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="content-block">
+                            Unicorn Hotels Inc. 147 Van Ness, San Francisco 94102
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="footer">
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td class="aligncenter content-block">Questions? Email <a href="mailto:">support@unicornHotels.inc</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </td>
         <td></td>
-    </tr>
-</tbody></table>
-  </body>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
 </html>
+<script>
+  function doCapture() {
+    html2canvas(document.getElementById("bill")).then(function(canvas) {
+
+      var ajax = new XMLHttpRequest();
+
+      ajax.open("POST", "receive.php", true);
+
+      ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      ajax.send("image=" + canvas.toDataURL("image/jpeg", 0.9));
+      ajax.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+          console.log(this.responseText);
+        }
+      };
+    });
+  }
+</script>

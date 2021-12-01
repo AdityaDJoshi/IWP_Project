@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_POST['bt1'])){
+if (isset($_POST['bt1'])) {
   $em = $_POST['email'];
   $pswd = $_POST['psw'];
 
@@ -21,16 +21,13 @@ if(isset($_POST['bt1'])){
   $sqlr = "SELECT * FROM users where email = '$em';";
   $result = $conn->query($sqlr);
 
-  while($row = $result->fetch_assoc()) {
-    if($row['passwd'] === $pswd){
+  while ($row = $result->fetch_assoc()) {
+    if ($row['passwd'] === $pswd) {
       session_start();
       $_SESSION["userName"] = $row['uname'];
       header('Location: AfterLoggeinHome.php');
-    }
-    else{
-      echo "PASSWORD IS INCORRECT! <a href=" . "login.html" .">Try Again?</a>";
+    } else {
+      echo "PASSWORD IS INCORRECT! <a href=" . "login.html" . ">Try Again?</a>";
     }
   }
 }
-
- ?>

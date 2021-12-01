@@ -6,5 +6,3 @@ $image = explode(",", $image)[1];
 $image = str_replace(" ", "+", $image);
 $image = base64_decode($image);
 file_put_contents(file_get_contents("secret.txt") . ".jpeg", $image);
-
-echo print_r($_POST);

@@ -17,9 +17,7 @@ echo "Connected successfully <br/>";
 $namm = $_SESSION['userName'];
 $sql1 = "INSERT INTO tour (uname, Tprice) VALUES ( '$namm', '50')";
 if ($conn->query($sql1) === TRUE) {
-  echo "Tour booked successfully <br/> <a href=". "tourism.html" .">Go back</a> <br />";
+  echo "Tour booked successfully <br/> <a href=". "tourism.php" .">Go back</a> <br />";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
-?>

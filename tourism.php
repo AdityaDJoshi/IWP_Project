@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <?php session_start(); ?>
-    <title>Aria - Business HTML Landing Page Template</title>
+    <title>Tourism</title>
 
     <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600&display=swap&subset=latin-ext" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
@@ -30,108 +28,39 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="hotelhome.html">
-                <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/unicorn-icon.jpg" width="30"
-                    height="30" class="d-inline-block align-top" alt="">
+                <img src="https://www.publicdomainpictures.net/pictures/200000/nahled/unicorn-icon.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
                 Unicorn Hotels</a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="AfterLoggeinHome.php">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link " href="AfterAbutus.php">About us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="tourism.php">Tourist spots</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="invoice.php">Invoice</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="AfterRooms.php">Rooms & Pricing</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="AfterRestnt.php">Restaurant</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#" style="background-color: white; margin-left:15px; color: black;"><img style="background-color: white;" src="https://img.icons8.com/ios/40/000000/user--v3.png"/><?php echo $_SESSION['userName']; ?></a>
-                  </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="AfterLoggeinHome.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="AfterAbutus.php">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tourism.php">Tourist spots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="invoice.php">Invoice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AfterRooms.php">Rooms & Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AfterRestnt.php">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" style="background-color: white; margin-left:15px; color: black;"><img style="background-color: white;" src="https://img.icons8.com/ios/40/000000/user--v3.png" /><?php echo $_SESSION['userName']; ?></a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- <nav class="navbar navbar-expand-md navbar-dark navbar-custom fixed-top"> -->
-    <!-- Text Logo - Use this if you don't have a graphic logo -->
-    <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Aria</a> -->
 
-    <!-- Image Logo -->
-    <!-- <a class="navbar-brand logo-image" href="index.html"><img src="images/logo.svg" alt="alternative"></a> -->
-
-    <!-- Mobile Menu Toggle Button -->
-    <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-awesome fas fa-bars"></span>
-            <span class="navbar-toggler-awesome fas fa-times"></span>
-        </button> -->
-    <!-- end of mobile menu toggle button -->
-
-    <!-- <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#header">HOME <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#intro">INTRO</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#services">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#callMe">CALL ME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#projects">PROJECTS</a>
-                </li> -->
-
-    <!-- Dropdown Menu -->
-    <!-- <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle page-scroll" href="#about" id="navbarDropdown" role="button"
-                        aria-haspopup="true" aria-expanded="false">ABOUT</a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS
-                                CONDITIONS</span></a>
-                        <div class="dropdown-items-divide-hr"></div>
-                        <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY
-                                POLICY</span></a>
-                    </div>
-                </li> -->
-    <!-- end of dropdown menu -->
-
-    <!-- <li class="nav-item">
-        <a class="nav-link page-scroll" href="#contact">CONTACT</a>
-    </li>
-    </ul>
-    <span class="nav-item social-icons">
-        <span class="fa-stack">
-            <a href="#your-link">
-                <span class="hexagon"></span>
-                <i class="fab fa-facebook-f fa-stack-1x"></i>
-            </a>
-        </span>
-        <span class="fa-stack">
-            <a href="#your-link">
-                <span class="hexagon"></span>
-                <i class="fab fa-twitter fa-stack-1x"></i>
-            </a>
-        </span>
-    </span>
-    </div>
-    </nav> end of navbar -->
-    <!-- end of navbar -->
 
 
     <!-- Header -->
@@ -292,50 +221,42 @@
                     <div class="grid">
                         <div class="element-item development">
                             <a class="popup-with-move-anim" href="#project-1">
-                                <div class="element-item-overlay"><span>Online Banking</span></div><img
-                                    src="images/project-1.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>Online Banking</span></div><img src="images/project-1.jpg" alt="alternative">
                             </a>
                         </div>
                         <div class="element-item development">
                             <a class="popup-with-move-anim" href="#project-2">
-                                <div class="element-item-overlay"><span>Classic Industry</span></div><img
-                                    src="images/project-2.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>Classic Industry</span></div><img src="images/project-2.jpg" alt="alternative">
                             </a>
                         </div>
                         <div class="element-item design development marketing">
                             <a class="popup-with-move-anim" href="#project-3">
-                                <div class="element-item-overlay"><span>BoomBap Audio</span></div><img
-                                    src="images/project-3.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>BoomBap Audio</span></div><img src="images/project-3.jpg" alt="alternative">
                             </a>
                         </div>
                         <div class="element-item design development marketing">
                             <a class="popup-with-move-anim" href="#project-4">
-                                <div class="element-item-overlay"><span>Van Moose</span></div><img
-                                    src="images/project-4.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>Van Moose</span></div><img src="images/project-4.jpg" alt="alternative">
                             </a>
                         </div>
                         <div class="element-item design development marketing seo">
                             <a class="popup-with-move-anim" href="#project-5">
-                                <div class="element-item-overlay"><span>Joy Moments</span></div><img
-                                    src="images/project-5.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>Joy Moments</span></div><img src="images/project-5.jpg" alt="alternative">
                             </a>
                         </div>
                         <div class="element-item design marketing seo">
                             <a class="popup-with-move-anim" href="#project-6">
-                                <div class="element-item-overlay"><span>Spark Events</span></div><img
-                                    src="images/project-6.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>Spark Events</span></div><img src="images/project-6.jpg" alt="alternative">
                             </a>
                         </div>
                         <div class="element-item design marketing">
                             <a class="popup-with-move-anim" href="#project-7">
-                                <div class="element-item-overlay"><span>Casual Wear</span></div><img
-                                    src="images/project-7.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>Casual Wear</span></div><img src="images/project-7.jpg" alt="alternative">
                             </a>
                         </div>
                         <div class="element-item design marketing">
                             <a class="popup-with-move-anim" href="#project-8">
-                                <div class="element-item-overlay"><span>Zazoo Apps</span></div><img
-                                    src="images/project-8.jpg" alt="alternative">
+                                <div class="element-item-overlay"><span>Zazoo Apps</span></div><img src="images/project-8.jpg" alt="alternative">
                             </a>
                         </div>
                     </div> <!-- end of grid -->
@@ -369,8 +290,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -396,8 +316,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -423,8 +342,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -450,8 +368,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -477,8 +394,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -504,8 +420,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -531,8 +446,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -558,8 +472,7 @@
                         you manage sales and meet your current requirements.</p>
                     <p class="testimonial-author">General Manager</p>
                 </div>
-                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button"
-                    href="#projects">BACK</a>
+                <a class="btn-solid-reg" href="#your-link">DETAILS</a> <a class="btn-outline-reg mfp-close as-button" href="#projects">BACK</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of lightbox-basic -->
@@ -608,10 +521,7 @@
                                 <div class="counter-value number-count" data-count="1000">1</div>
                                 <div class="counter-info">Happy<br>Users</div>
                             </div>
-                            <!-- <div class="cell">
-                                <div class="counter-value number-count" data-count="121">1</div>
-                                <div class="counter-info">Issues<br>Solved</div>
-                            </div> -->
+
                             <div class="cell">
                                 <div class="counter-value number-count" data-count="800">1</div>
                                 <div class="counter-info">Good<br>Reviews</div>
@@ -628,118 +538,7 @@
 
 
     <!-- Testimonials -->
-    <div class="slider">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h2>Read Our Customer Testimonials</h2>
-                    <p class="p-heading">Our clients are our partners and we can not imagine a better future for our
-                        company without helping them reach their objectives</p>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-            <div class="row">
-                <div class="col-lg-12">
 
-                    <!-- Card Slider -->
-                    <div class="slider-container">
-                        <div class="swiper-container card-slider">
-                            <div class="swiper-wrapper">
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-1.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">The guys from Aria helped with getting my
-                                                business off the ground and turning into a profitable company.</div>
-                                            <div class="testimonial-author">Jude Thorn - Founder</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-2.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">I purchased the Growth Accelerator service
-                                                pack a few years ago and I renewed the contract each year. </div>
-                                            <div class="testimonial-author">Marsha Singer - Marketer</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-3.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">Aria's CEO personally attends client meetings
-                                                and gives his feedback on business growth strategies.</div>
-                                            <div class="testimonial-author">Roy Smith - Developer</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-4.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">At the beginning I thought the prices are a
-                                                little high for what they offer but they over deliver each and every
-                                                time.</div>
-                                            <div class="testimonial-author">Ronald Spice - Owner</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-5.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">I recommend Aria to every business owner or
-                                                growth leader that wants to take his company to the next level.</div>
-                                            <div class="testimonial-author">Lindsay Rune - Manager</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                                <!-- Slide -->
-                                <div class="swiper-slide">
-                                    <div class="card">
-                                        <img class="card-image" src="images/testimonial-6.jpg" alt="alternative">
-                                        <div class="card-body">
-                                            <div class="testimonial-text">My goals for using Aria's services seemed high
-                                                when I first set them but they've met them with no problems.</div>
-                                            <div class="testimonial-author">Ann Black - Consultant</div>
-                                        </div>
-                                    </div>
-                                </div> <!-- end of swiper-slide -->
-                                <!-- end of slide -->
-
-                            </div> <!-- end of swiper-wrapper -->
-
-                            <!-- Add Arrows -->
-                            <div class="swiper-button-next"></div>
-                            <div class="swiper-button-prev"></div>
-                            <!-- end of add arrows -->
-
-                        </div> <!-- end of swiper-container -->
-                    </div> <!-- end of sliedr-container -->
-                    <!-- end of card slider -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of slider -->
-    <!-- end of testimonials -->
 
 
     <!-- Footer -->
